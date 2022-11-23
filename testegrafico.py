@@ -14,7 +14,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-df = pd.read_excel('HISTORICO.xlsx')
+df = pd.read_excel('HISTORICO.xlsx', sheet_name = 0)
 
 #from google.colab import files
 #df = files.upload()
