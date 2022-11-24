@@ -44,12 +44,13 @@ if(member != 'Todos'):
 
 # original
 # agrupa, cria o indice pela data e num_sequences, que é o totalizador
+df['nova_data'] = df['Due'].dt.strftime('%d-%m-%Y')
 
-#dfShow = df.groupby(by = ['Due']).sum()
-#num_sequences vem do groupby
-#grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
-#grafico.update_layout(title = 'Cards do Trello')
-#st.plotly_chart(grafico, use_container_width = True)
+dfShow = df.groupby(by = ['nova_data']).sum()
+num_sequences vem do groupby
+grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
+grafico.update_layout(title = 'Cards do Trello')
+st.plotly_chart(grafico, use_container_width = True)
 
 
 #Problema com a data
@@ -59,11 +60,11 @@ if(member != 'Todos'):
 #st.text(dfShow.index)
 
 
-df['data_DD_MM_AAAA'] = df['Due'].dt.strftime('%d-%m-%Y')
+#df['data_DD_MM_AAAA'] = df['Due'].dt.strftime('%d-%m-%Y')
 
 #df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True, format='%Y/%m/%d' )
-dfShow = df.groupby(by = ['data_DD_MM_AAAA']).sum()
+#dfShow = df.groupby(by = ['data_DD_MM_AAAA']).sum()
 
-st.text(dfShow.index)
+#st.text(dfShow.index)
 
 
