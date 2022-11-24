@@ -27,6 +27,7 @@ members = list(df['Members'].unique())
 
 df['Due'] = pd.to_datetime(df['Due'], format='%Y/%m/%d' )
 
+
 title = st.sidebar.selectbox('Escolha o Ticket', ['Todos'] + titles)
 member = st.sidebar.selectbox('Escolha o Executor', ['Todos'] + members)
 
@@ -58,11 +59,10 @@ if(member != 'Todos'):
 #st.text(dfShow.index)
 
 
-df['Due'] = df['Due'].strftime('%d/%m/%Y')
-
+df['data_DD_MM_AAAA'] = df['Due'].dt.strftime('%d-%m-%Y')
 
 #df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True, format='%Y/%m/%d' )
-dfShow = df.groupby(by = ['Due']).sum()
+dfShow = df.groupby(by = ['data_DD_MM_AAAA']).sum()
 
 st.text(dfShow.index)
 
