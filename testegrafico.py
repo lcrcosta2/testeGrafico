@@ -49,9 +49,11 @@ if(member != 'Todos'):
 df['nova_data'] = df['Due'].dt.strftime('%d-%m-%Y')
 dfShow = df.groupby(by = ['nova_data']).sum()
 
-grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
-grafico.update_layout(title = 'Cards do Trello')
-st.plotly_chart(grafico, use_container_width = True)
+st.text(dfShow)
+
+#grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
+#grafico.update_layout(title = 'Cards do Trello')
+#st.plotly_chart(grafico, use_container_width = True)
 
 
 #Problema com a data
