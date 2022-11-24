@@ -46,7 +46,9 @@ st.text(dfShow.index)
 
 dataCard = str(df['Due'])
 
-df['Due'] = dataCard.strftime('%Y/%m/%d')
+df['Due'] = pd.to_datetime(dataCard, '%Y/%m/%d')
+
+dfShow = df.groupby(by = ['Due']).sum()
 
 st.text(dfShow.index)
 
