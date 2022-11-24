@@ -41,7 +41,7 @@ if(member != 'Todos'):
   st.text('Executor: ' + member)
   df = df[df['Members'] == member]
 
-dfShow = df.groupby(by = ['due']).sum()
+dfShow = df.groupby(by = ['Due']).sum()
 
 
 #num_sequences vem do groupby
