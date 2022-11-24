@@ -58,7 +58,7 @@ if(member != 'Todos'):
 #st.text(dfShow.index)
 
 dataCard = str(df['Due'])
-df['Due'] = df['Due'].strftime('%d/%m/%Y')
+df['Due'] = dataCard.strftime('%d/%m/%Y')
 
 
 #df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True, format='%Y/%m/%d' )
