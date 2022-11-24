@@ -40,9 +40,9 @@ if(member != 'Todos'):
   st.text('Executor: ' + member)
   df = df[df['Members'] == member]
 
-dfShow = df.groupby(by = ['Due']).sum()
+#dfShow = df.groupby(by = ['Due']).sum()
 
-st.text(dfShow.index)
+#st.text(dfShow.index)
 
 dataCard = str(df['Due'])
 
