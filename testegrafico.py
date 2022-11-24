@@ -44,6 +44,10 @@ dfShow = df.groupby(by = ['Due']).sum()
 
 st.text(dfShow.index)
 
+df['Due'] = df['Due'].strftime('%Y/%m/%d')
+
+st.text(dfShow.index)
+
 #num_sequences vem do groupby
 #grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
 #grafico.update_layout(title = 'Cards do Trello')
