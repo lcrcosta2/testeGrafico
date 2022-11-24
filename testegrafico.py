@@ -40,20 +40,28 @@ if(member != 'Todos'):
   st.text('Executor: ' + member)
   df = df[df['Members'] == member]
 
+# original
+# agrupa, cria o indice pela data e num_sequences, que é o totalizador
+
 #dfShow = df.groupby(by = ['Due']).sum()
+#num_sequences vem do groupby
+#grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
+#grafico.update_layout(title = 'Cards do Trello')
+#st.plotly_chart(grafico, use_container_width = True)
+
+
+#Problema com a data
+#não quer criar o indice, pq está date time e não estou conseguindo tirar a hora, na linha 27
+#tentativas abaixo.
 
 #st.text(dfShow.index)
 
 dataCard = str(df['Due'])
 
-df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True )
+df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True, format='%Y/%m/%d' )
 
 dfShow = df.groupby(by = ['Due']).sum()
 
 st.text(dfShow.index)
 
-#num_sequences vem do groupby
-#grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
-#grafico.update_layout(title = 'Cards do Trello')
-#st.plotly_chart(grafico, use_container_width = True)
 
