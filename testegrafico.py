@@ -24,7 +24,7 @@ df = pd.read_excel('HISTORICO.xlsx', sheet_name = 0)
 titles = list(df['Title'].unique())
 members = list(df['Members'].unique())
 
-df['Due'] = pd.to_datetime(df['Due'], format='%Y/%m/%d' )
+df['Due'] = pd.to_date(df['Due'], format='%Y/%m/%d' )
 
 
 title = st.sidebar.selectbox('Escolha o Ticket', ['Todos'] + titles)
