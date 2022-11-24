@@ -13,6 +13,7 @@ Original file is located at
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+from datetime import date
 from openpyxl import *
 
 
@@ -57,9 +58,10 @@ if(member != 'Todos'):
 #st.text(dfShow.index)
 
 dataCard = str(df['Due'])
+df['Due'] = df['Due'].strftime('%d/%m/%Y')
 
-df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True, format='%Y/%m/%d' )
 
+#df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True, format='%Y/%m/%d' )
 dfShow = df.groupby(by = ['Due']).sum()
 
 st.text(dfShow.index)
