@@ -44,10 +44,11 @@ if(member != 'Todos'):
 
 # original
 # agrupa, cria o indice pela data e num_sequences, que é o totalizador
-df['nova_data'] = df['Due'].dt.strftime('%d-%m-%Y')
+#num_sequences vem do groupby
 
+df['nova_data'] = df['Due'].dt.strftime('%d-%m-%Y')
 dfShow = df.groupby(by = ['nova_data']).sum()
-num_sequences vem do groupby
+
 grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
 grafico.update_layout(title = 'Cards do Trello')
 st.plotly_chart(grafico, use_container_width = True)
