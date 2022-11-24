@@ -44,7 +44,7 @@ dfShow = df.groupby(by = ['Due']).sum()
 
 st.text(dfShow.index)
 
-dataCard = pd.to_string(df['Due'])
+dataCard = df['Due']
 
 df['Due'] = dataCard.strftime('%Y/%m/%d')
 
