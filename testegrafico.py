@@ -43,7 +43,7 @@ if(member != 'Todos'):
 
 dfShow = df.groupby(by = ['Due']).sum()
 
-st.text(dfShow)
+st.text(dfShow.index)
 
 #num_sequences vem do groupby
 #grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
