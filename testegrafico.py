@@ -46,7 +46,7 @@ if(member != 'Todos'):
 
 dataCard = str(df['Due'])
 
-df['Due'] = pd.to_datetime(dataCard, errors = 'coerse', yearfirst = True )
+df['Due'] = pd.to_datetime(dataCard, errors = 'ignore', yearfirst = True )
 
 dfShow = df.groupby(by = ['Due']).sum()
 
