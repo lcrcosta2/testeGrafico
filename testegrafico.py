@@ -11,6 +11,7 @@ Original file is located at
 """ @author: Luiz """
 
 import pandas as pd
+import geopandas as geo
 import plotly.express as px
 import streamlit as st
 from datetime import date
