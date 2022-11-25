@@ -51,9 +51,9 @@ dfShow = df.groupby(by = ['nova_data']).sum()
 
 st.text(dfShow)
 
-#grafico = px.line(dfShow, x=dfShow.index, y='num_sequences')
-#grafico.update_layout(title = 'Cards do Trello')
-#st.plotly_chart(grafico, use_container_width = True)
+grafico = px.line(dfShow, x=dfShow.index, y='QTDE')
+grafico.update_layout(title = 'Cards do Trello')
+st.plotly_chart(grafico, use_container_width = True)
 
 
 #Problema com a data
